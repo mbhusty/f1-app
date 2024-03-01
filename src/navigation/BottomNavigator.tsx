@@ -4,11 +4,14 @@ import {Standings} from '../screens/main/Standings';
 import {Statistic} from '../screens/main/Statistic';
 import {Races} from '../screens/main/Races';
 import {Colors} from '../constants/colors';
-import {StyleSheet, useColorScheme} from 'react-native';
+import {StyleSheet} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useTheme} from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator<any>();
 
 export const BottomNavigator: FC = () => {
+  const {colors} = useTheme();
   return (
     <>
       <Tab.Navigator
@@ -17,7 +20,7 @@ export const BottomNavigator: FC = () => {
           headerShown: false,
           tabBarStyle: styles.tabBarStyle,
           tabBarLabelStyle: styles.tabBarLabelStyle,
-          tabBarActiveTintColor: Colors.primary,
+          tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: Colors.gray,
           tabBarItemStyle: styles.tabBarItemStyle,
         }}>
@@ -25,6 +28,9 @@ export const BottomNavigator: FC = () => {
           name="Races"
           component={Races}
           options={{
+            tabBarIcon: ({color, size}) => {
+              return <Icon name="timetable" size={20} color={colors.primary} />;
+            },
             title: 'Races',
           }}
         />
@@ -32,6 +38,11 @@ export const BottomNavigator: FC = () => {
           name="Standings"
           component={Standings}
           options={{
+            tabBarIcon: ({color, size}) => {
+              return (
+                <Icon name="racing-helmet" size={20} color={colors.primary} />
+              );
+            },
             title: 'Standings',
           }}
         />
@@ -39,7 +50,12 @@ export const BottomNavigator: FC = () => {
           name="Statistic"
           component={Statistic}
           options={{
-            title: 'Statistic',
+            tabBarIcon: ({color, size}) => {
+              return (
+                <Icon name="flag-checkered" size={20} color={colors.primary} />
+              );
+            },
+            title: 'Statistic ',
           }}
         />
       </Tab.Navigator>
@@ -53,10 +69,10 @@ const styles = StyleSheet.create({
     //backgroundColor: Colors.red50,
   },
   tabBarLabelStyle: {
-    fontSize: 14,
+    fontSize: 10,
     fontStyle: 'normal',
     fontWeight: '500',
-    lineHeight: 20,
+    //lineHeight: 20,
     fontFamily: 'Formula1',
     textTransform: 'uppercase',
   },

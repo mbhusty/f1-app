@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {FlatList} from 'react-native';
 import DriversItem from './DriversItem';
 import {apiRequest} from '../../utils/apiRequest';
+import NoData from '../Empty/NoData';
 
 interface Driver {
   positionText: string;
@@ -13,14 +14,15 @@ const DriversList: React.FC = () => {
   const fetchDataStandings = async () => {
     try {
       const responseDriverStandings = await apiRequest.get(
-        '2024/driverStandings.json',
+        '2023/driverStandings.json',
       );
       const fetchedStandings =
-        responseDriverStandings.data.MRData.StandingsTable.StandingsLists[0]
-          .DriverStandings;
-      setDrivers(fetchedStandings);
+        responseDriverStandings.data.MRData.StandingsTable.StandingsLists[0];
+      if (fetchedStandings.DriverStandings) {
+        setDrivers(fetchedStandings.DriverStandings);
+      }
     } catch (error) {
-      console.error('Error fetching races:', error);
+      console.log('Error fetching races:', error);
     }
   };
 
@@ -28,18 +30,14 @@ const DriversList: React.FC = () => {
     fetchDataStandings();
   }, []);
 
-  const renderDrivers = ({item}: {item: Driver}) => (
-    <DriversItem driver={item} />
-  );
-
   return (
     <FlatList
       data={drivers}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
-      renderItem={renderDrivers}
+      renderItem={({item}) => <DriversItem driver={item} />}
       keyExtractor={item => item.positionText}
-      // ListEmptyComponent={EmptyList}
+      ListEmptyComponent={NoData}
     />
   );
 };

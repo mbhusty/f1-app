@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -7,26 +7,30 @@ import {
   useColorScheme,
 } from 'react-native';
 import {Colors} from '../../constants/colors';
-import Moment from 'moment';
+import moment from 'moment-timezone';
+import TimeZone from 'react-native-timezone';
 import Divider from '../Divider/Divider';
-import {useTheme} from '@react-navigation/native';
+import {ParamListBase, useNavigation, useTheme} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 const RaceItem = ({race}) => {
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
   const theme = useColorScheme();
   const {colors} = useTheme();
-
-  Moment.locale('en');
+  moment.locale('en');
+  const timezone = TimeZone.getTimeZone();
   return (
     <TouchableOpacity
+      onPress={() => navigation.navigate('DetailRace')}
       style={[styles.container, {backgroundColor: colors.primary}]}>
       <View style={styles.card}>
         <View style={styles.dateBlock}>
           <Text style={[styles.dateTextNum, {color: colors.text}]}>
-            {Moment(race.date).format('Do')}
+            {moment(race.date).format('Do')}
           </Text>
           <View style={styles.monthBlock}>
             <Text style={[styles.dateTextMonth, {color: colors.text}]}>
-              {Moment(race.date).format('MMM')}
+              {moment(race.date).format('MMM')}
             </Text>
           </View>
         </View>
@@ -48,6 +52,14 @@ const RaceItem = ({race}) => {
           <Text style={[styles.circuitName, {color: colors.text}]}>
             {race.Circuit.circuitName}
           </Text>
+          {race.time && (
+            <Text style={[styles.circuitName, {color: colors.text}]}>
+              Race start:
+              {moment
+                .tz(race.date + ' ' + race.time, timezone)
+                .format('H:mm:ss')}
+            </Text>
+          )}
         </View>
       </View>
     </TouchableOpacity>
@@ -60,6 +72,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     paddingTop: 20,
     paddingBottom: 20,
+    height: 130,
   },
   card: {
     flexDirection: 'row',

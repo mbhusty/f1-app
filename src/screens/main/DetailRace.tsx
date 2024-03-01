@@ -1,9 +1,10 @@
+import {FC} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-export const Statistic: React.FC = () => {
+export const DetailRace: FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Statistic</Text>
+      <Text style={styles.text}>Detail</Text>
     </View>
   );
 };

@@ -23,7 +23,7 @@ const FirstRoute = () => (
 
 const SecondRoute = () => (
   <View>
-    <Text>ConstructorsList</Text>
+    <ConstructorsList />
   </View>
 );
 
@@ -97,12 +97,11 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
     paddingTop: StatusBar.currentHeight,
   },
   tabText: {
     fontFamily: 'Formula1',
     fontSize: 20,
-    padding: 10,
+    padding: 5,
   },
 });
