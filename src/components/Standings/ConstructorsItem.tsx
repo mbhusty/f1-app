@@ -18,16 +18,14 @@ const ConstructorsItem = ({constructor}) => {
       style={[styles.container, {backgroundColor: colors.primary}]}>
       <View style={styles.card}>
         <View style={styles.dateBlock}>
-          <View style={styles.monthBlock}>
-            <Text style={[styles.dateTextMonth, {color: colors.text}]}>
-              {constructor.position}
-            </Text>
-          </View>
+          <Text style={[styles.position, {color: colors.text}]}>
+            {constructor.position}
+          </Text>
         </View>
         <Divider
           orientation={'vertical'}
           width={2}
-          color={theme === 'dark' ? '#000' : '#fff'}
+          color={theme === 'dark' ? colors.primary : colors.text}
         />
         <View style={styles.infoBlock}>
           <Text style={[styles.round, {color: colors.text}]}>
@@ -36,15 +34,12 @@ const ConstructorsItem = ({constructor}) => {
           <Text style={[styles.raceName, {color: colors.text}]}>
             {constructor.Constructor.nationality}
           </Text>
+          <Text style={[styles.round, {color: colors.text}]}>
+            Wins: {constructor.wins}
+          </Text>
         </View>
-        <View>
-          <Text
-            style={{
-              fontSize: 54,
-              color: colors.background,
-              fontFamily: 'Formula1',
-              alignContent: 'center',
-            }}>
+        <View style={styles.pointsBlock}>
+          <Text style={[styles.points, {color: colors.text}]}>
             {constructor.points}
           </Text>
         </View>
@@ -62,6 +57,7 @@ const styles = StyleSheet.create({
     height: 130,
   },
   card: {
+    height: '100%',
     flexDirection: 'row',
   },
   dateBlock: {
@@ -86,17 +82,15 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '500',
   },
-  dateTextMonth: {
-    fontSize: 11,
+  position: {
+    fontSize: 35,
     fontWeight: '400',
-
-    alignItems: 'center',
-    alignSelf: 'center',
+    fontFamily: 'Formula1',
   },
   round: {
     fontFamily: 'Formula1',
     fontWeight: '400',
-    fontSize: 11,
+    fontSize: 18,
   },
   country: {
     fontFamily: 'Extreme',
@@ -106,13 +100,22 @@ const styles = StyleSheet.create({
   raceName: {
     fontFamily: 'Extreme',
     fontWeight: '700',
-    fontSize: 15,
+    fontSize: 20,
   },
   circuitName: {
     fontFamily: 'Extreme',
     fontWeight: '200',
     fontSize: 15,
-    //color: '#cccdd7',
+  },
+  pointsBlock: {
+    justifyContent: 'space-around',
+    flex: 1,
+    padding: 10,
+  },
+  points: {
+    fontSize: 35,
+    fontFamily: 'Formula1',
+    textAlign: 'right',
   },
 });
 

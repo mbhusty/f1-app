@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList} from 'react-native';
+import {Alert, FlatList, StyleSheet} from 'react-native';
 import ConstructorsItem from './ConstructorsItem';
 import {apiRequest} from '../../utils/apiRequest';
 import NoData from '../Empty/NoData';
@@ -14,7 +14,7 @@ const ConstructorsItemList: React.FC = () => {
   const fetchDataStandings = async () => {
     try {
       const responseConstructorStandings = await apiRequest.get(
-        '2023/constructorstandings.json',
+        '2024/constructorstandings.json',
       );
       const fetchedStandings =
         responseConstructorStandings.data.MRData.StandingsTable
@@ -23,7 +23,7 @@ const ConstructorsItemList: React.FC = () => {
         setConstructors(fetchedStandings.ConstructorStandings);
       }
     } catch (error) {
-      console.log('Error fetching races:', error);
+      Alert.alert('Error', 'Error constructor list');
     }
   };
 
@@ -39,8 +39,16 @@ const ConstructorsItemList: React.FC = () => {
       renderItem={({item}) => <ConstructorsItem constructor={item} />}
       keyExtractor={item => item.positionText}
       ListEmptyComponent={NoData}
+      style={styles.list}
     />
   );
 };
+
+const styles = StyleSheet.create({
+  list: {
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
+});
 
 export default ConstructorsItemList;

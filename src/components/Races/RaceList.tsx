@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {Alert, FlatList, StyleSheet} from 'react-native';
 import RaceItem from './RaceItem';
 import {Colors} from '../../constants/colors';
 import {apiRequest} from '../../utils/apiRequest';
@@ -18,7 +18,7 @@ const RaceList: React.FC = () => {
       const fetchedRaces = response.data.MRData.RaceTable.Races;
       setRaces(fetchedRaces);
     } catch (error) {
-      console.log('Error fetching races:', error);
+      Alert.alert('Error', 'Error fetching races');
     }
   };
 

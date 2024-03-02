@@ -21,7 +21,7 @@ const RaceItem = ({race}) => {
   const timezone = TimeZone.getTimeZone();
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('DetailRace')}
+      onPress={() => navigation.navigate('DetailRace', {id: race.raceName})}
       style={[styles.container, {backgroundColor: colors.primary}]}>
       <View style={styles.card}>
         <View style={styles.dateBlock}>
@@ -79,30 +79,31 @@ const styles = StyleSheet.create({
   },
   dateBlock: {
     justifyContent: 'space-around',
-    padding: 10,
+    padding: 15,
     alignItems: 'center',
     alignSelf: 'center',
     marginLeft: 5,
+    height: '100%',
   },
   infoBlock: {
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     padding: 10,
   },
   monthBlock: {
     backgroundColor: Colors.gray,
     borderRadius: 24,
-    width: 32,
+    width: 40,
     paddingTop: 2,
     paddingBottom: 2,
   },
   dateTextNum: {
-    fontSize: 13,
-    fontWeight: '500',
+    fontSize: 15,
+    fontWeight: '700',
   },
   dateTextMonth: {
-    fontSize: 11,
+    fontSize: 15,
     fontWeight: '400',
-
+    textTransform: 'uppercase',
     alignItems: 'center',
     alignSelf: 'center',
   },
@@ -125,7 +126,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Extreme',
     fontWeight: '200',
     fontSize: 15,
-    //color: '#cccdd7',
   },
 });
 

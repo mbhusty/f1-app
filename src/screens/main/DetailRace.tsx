@@ -1,10 +1,11 @@
 import {FC} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-export const DetailRace: FC = () => {
+export const DetailRace: FC = ({route}) => {
+  const {id} = route.params;
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Detail</Text>
+      <Text style={styles.text}>Detail {id}</Text>
     </View>
   );
 };

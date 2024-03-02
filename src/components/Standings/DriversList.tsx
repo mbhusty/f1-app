@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList} from 'react-native';
+import {Alert, FlatList, StyleSheet} from 'react-native';
 import DriversItem from './DriversItem';
 import {apiRequest} from '../../utils/apiRequest';
 import NoData from '../Empty/NoData';
@@ -14,7 +14,7 @@ const DriversList: React.FC = () => {
   const fetchDataStandings = async () => {
     try {
       const responseDriverStandings = await apiRequest.get(
-        '2023/driverStandings.json',
+        '2024/driverStandings.json',
       );
       const fetchedStandings =
         responseDriverStandings.data.MRData.StandingsTable.StandingsLists[0];
@@ -22,7 +22,7 @@ const DriversList: React.FC = () => {
         setDrivers(fetchedStandings.DriverStandings);
       }
     } catch (error) {
-      console.log('Error fetching races:', error);
+      Alert.alert('Error', 'Error drivers list');
     }
   };
 
@@ -38,8 +38,16 @@ const DriversList: React.FC = () => {
       renderItem={({item}) => <DriversItem driver={item} />}
       keyExtractor={item => item.positionText}
       ListEmptyComponent={NoData}
+      style={styles.list}
     />
   );
 };
+
+const styles = StyleSheet.create({
+  list: {
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
+});
 
 export default DriversList;
