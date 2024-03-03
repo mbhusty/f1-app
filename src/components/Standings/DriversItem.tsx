@@ -5,14 +5,17 @@ import {
   TouchableOpacity,
   StyleSheet,
   useColorScheme,
+  Image,
 } from 'react-native';
 import {Colors} from '../../constants/colors';
+import {Drivers} from '../../constants/drivers';
 import Divider from '../Divider/Divider';
 import {useTheme} from '@react-navigation/native';
 
 const RaceItem = ({driver}) => {
   const theme = useColorScheme();
   const {colors} = useTheme();
+
   return (
     <TouchableOpacity
       style={[styles.container, {backgroundColor: colors.primary}]}>
@@ -25,7 +28,7 @@ const RaceItem = ({driver}) => {
         <Divider
           orientation={'vertical'}
           width={2}
-          color={theme === 'dark' ? colors.primary : colors.text}
+          color={theme === 'dark' ? '#000' : '#fff'}
         />
         <View style={styles.infoBlock}>
           <Text style={[styles.round, {color: colors.text}]}>
@@ -40,9 +43,15 @@ const RaceItem = ({driver}) => {
           </Text>
         </View>
         <View style={styles.pointsBlock}>
-          <Text style={[styles.points, {color: colors.text}]}>
-            {driver.points}
-          </Text>
+          <Image
+            style={styles.driverImg}
+            source={Drivers[driver.Driver.code]}
+          />
+          <View style={[styles.overflow, {borderColor: colors.background}]}>
+            <Text style={[styles.points, {color: colors.text}]}>
+              {driver.points}
+            </Text>
+          </View>
         </View>
       </View>
     </TouchableOpacity>
@@ -56,6 +65,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 20,
     height: 130,
+    overflow: 'hidden',
   },
   card: {
     height: '100%',
@@ -67,6 +77,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     marginLeft: 5,
+    width: 70,
   },
   infoBlock: {
     justifyContent: 'space-around',
@@ -96,7 +107,7 @@ const styles = StyleSheet.create({
   country: {
     fontFamily: 'Extreme',
     fontWeight: '700',
-    fontSize: 15,
+    fontSize: 20,
   },
   raceName: {
     fontFamily: 'Extreme',
@@ -111,12 +122,28 @@ const styles = StyleSheet.create({
   pointsBlock: {
     justifyContent: 'space-around',
     flex: 1,
-    padding: 10,
+    //padding: 3,
   },
   points: {
-    fontSize: 35,
+    fontSize: 30,
     fontFamily: 'Formula1',
-    textAlign: 'right',
+    //textAlign: 'right',
+  },
+  driverImg: {
+    width: 120,
+    height: 135,
+    alignSelf: 'flex-end',
+  },
+  overflow: {
+    borderTopLeftRadius: 16,
+    borderBottomEndRadius: 16,
+    borderTopWidth: 1,
+    borderLeftWidth: 1,
+    padding: 4,
+    alignSelf: 'flex-end',
+    width: 85,
+    alignItems: 'center',
+    backgroundColor: Colors.primary,
   },
 });
 

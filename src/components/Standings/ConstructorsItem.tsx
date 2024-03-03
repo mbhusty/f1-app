@@ -25,7 +25,7 @@ const ConstructorsItem = ({constructor}) => {
         <Divider
           orientation={'vertical'}
           width={2}
-          color={theme === 'dark' ? colors.primary : colors.text}
+          color={theme === 'dark' ? '#000' : '#fff'}
         />
         <View style={styles.infoBlock}>
           <Text style={[styles.round, {color: colors.text}]}>

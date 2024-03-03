@@ -4,7 +4,7 @@ import {Standings} from '../screens/main/Standings';
 import {Statistic} from '../screens/main/Statistic';
 import {Races} from '../screens/main/Races';
 import {Colors} from '../constants/colors';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text, useColorScheme} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useTheme} from '@react-navigation/native';
 
@@ -12,17 +12,26 @@ const Tab = createBottomTabNavigator<any>();
 
 export const BottomNavigator: FC = () => {
   const {colors} = useTheme();
+  const theme = useColorScheme();
   return (
     <>
       <Tab.Navigator
         screenOptions={{
           tabBarHideOnKeyboard: true,
-          headerShown: false,
           tabBarStyle: styles.tabBarStyle,
           tabBarLabelStyle: styles.tabBarLabelStyle,
           tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: Colors.gray,
           tabBarItemStyle: styles.tabBarItemStyle,
+          header: ({...props}) => (
+            <Text
+              style={[
+                styles.text,
+                theme === 'dark' ? styles.darkText : styles.lightText,
+              ]}>
+              {props.options.title}
+            </Text>
+          ),
         }}>
         <Tab.Screen
           name="Races"
@@ -79,5 +88,16 @@ const styles = StyleSheet.create({
   tabBarItemStyle: {
     height: 40,
     alignSelf: 'flex-end',
+  },
+  text: {
+    fontSize: 56,
+    fontFamily: 'Formula1',
+    paddingLeft: 15,
+  },
+  darkText: {
+    color: Colors.background,
+  },
+  lightText: {
+    color: Colors.totalBlack,
   },
 });

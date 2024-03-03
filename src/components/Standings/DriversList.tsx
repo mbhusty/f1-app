@@ -3,6 +3,7 @@ import {Alert, FlatList, StyleSheet} from 'react-native';
 import DriversItem from './DriversItem';
 import {apiRequest} from '../../utils/apiRequest';
 import NoData from '../Empty/NoData';
+import Loader from '../Loader/Loader';
 
 interface Driver {
   positionText: string;
@@ -10,8 +11,10 @@ interface Driver {
 
 const DriversList: React.FC = () => {
   const [drivers, setDrivers] = useState<Driver[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchDataStandings = async () => {
+    setLoading(true);
     try {
       const responseDriverStandings = await apiRequest.get(
         '2024/driverStandings.json',
@@ -23,6 +26,8 @@ const DriversList: React.FC = () => {
       }
     } catch (error) {
       Alert.alert('Error', 'Error drivers list');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -31,15 +36,21 @@ const DriversList: React.FC = () => {
   }, []);
 
   return (
-    <FlatList
-      data={drivers}
-      showsHorizontalScrollIndicator={false}
-      showsVerticalScrollIndicator={false}
-      renderItem={({item}) => <DriversItem driver={item} />}
-      keyExtractor={item => item.positionText}
-      ListEmptyComponent={NoData}
-      style={styles.list}
-    />
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <FlatList
+          data={drivers}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item}) => <DriversItem driver={item} />}
+          keyExtractor={item => item.positionText}
+          ListEmptyComponent={NoData}
+          style={styles.list}
+        />
+      )}
+    </>
   );
 };
 

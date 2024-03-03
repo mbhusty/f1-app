@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -19,10 +19,27 @@ const RaceItem = ({race}) => {
   const {colors} = useTheme();
   moment.locale('en');
   const timezone = TimeZone.getTimeZone();
+
+  const [isPastDate, setIsPastDate] = useState(false);
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const raceDate = new Date(race.date);
+
+    if (raceDate < currentDate) {
+      setIsPastDate(true);
+    } else {
+      setIsPastDate(false);
+    }
+  }, []);
+
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate('DetailRace', {id: race.raceName})}
-      style={[styles.container, {backgroundColor: colors.primary}]}>
+      style={[
+        styles.container,
+        {backgroundColor: colors.primary, opacity: isPastDate ? 0.7 : 1},
+      ]}>
       <View style={styles.card}>
         <View style={styles.dateBlock}>
           <Text style={[styles.dateTextNum, {color: colors.text}]}>

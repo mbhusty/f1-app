@@ -3,17 +3,7 @@ import {Colors} from '../../constants/colors';
 
 export const Statistic: React.FC = () => {
   const theme = useColorScheme();
-  return (
-    <View style={styles.container}>
-      <Text
-        style={[
-          styles.text,
-          theme === 'dark' ? styles.darkText : styles.lightText,
-        ]}>
-        Statistic
-      </Text>
-    </View>
-  );
+  return <View style={styles.container}></View>;
 };
 
 const styles = StyleSheet.create({

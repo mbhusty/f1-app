@@ -14,6 +14,7 @@ import {TabView, SceneMap} from 'react-native-tab-view';
 
 import DriversList from '../../components/Standings/DriversList';
 import ConstructorsList from '../../components/Standings/ConstructorsList';
+import {Colors} from '../../constants/colors';
 
 const FirstRoute = () => (
   <View>
@@ -59,7 +60,9 @@ export const Standings: FC = () => {
           });
 
           return (
-            <TouchableOpacity onPress={() => setIndex(i)}>
+            <TouchableOpacity
+              onPress={() => setIndex(i)}
+              style={[{opacity}, styles.tabBlock]}>
               <Animated.Text
                 style={[{opacity}, styles.tabText, {color: colors.primary}]}>
                 {route.title}
@@ -73,7 +76,6 @@ export const Standings: FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.text, {color: colors.primary}]}>Standings</Text>
       <TabView
         navigationState={{index, routes}}
         renderScene={renderScene}
@@ -103,5 +105,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Formula1',
     fontSize: 20,
     padding: 5,
+  },
+  tabBlock: {
+    borderWidth: 3,
+    borderBottomColor: 'red',
+    borderTopWidth: 0,
+    borderStartWidth: 0,
+    borderEndWidth: 0,
+    borderEndStartRadius: 15,
   },
 });
