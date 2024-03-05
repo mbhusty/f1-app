@@ -1,0 +1,6 @@
+module Pods_F1Hub {
+  umbrella header "Pods-F1Hub-umbrella.h"
+
+  export *
+  module * { export * }
+}

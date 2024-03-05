@@ -1,0 +1,33 @@
+{
+  "name": "react-native-timezone",
+  "version": "3.0.1",
+  "summary": "A Simple react native module to get Timezone and Region of the Android/iOS devices.",
+  "homepage": "https://github.com/samitha9125/react-native-timezone#readme",
+  "license": "MIT",
+  "authors": "Samitha Nanayakkara <samithananayakkara@gmail.com> (https://samithananayakkara.com)",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source": {
+    "git": "https://github.com/samitha9125/react-native-timezone.git",
+    "tag": "3.0.1"
+  },
+  "frameworks": "CoreTelephony",
+  "source_files": "ios/**/*.{h,m,mm}",
+  "compiler_flags": "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -Wno-comma -Wno-shorten-64-to-32",
+  "dependencies": {
+    "React-Core": [
+
+    ],
+    "RCT-Folly": [
+      "2022.05.16.00"
+    ],
+    "glog": [
+
+    ]
+  },
+  "pod_target_xcconfig": {
+    "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/Headers/Private/Yoga\"",
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++20"
+  }
+}
