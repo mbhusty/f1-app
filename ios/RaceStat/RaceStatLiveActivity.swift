@@ -36,44 +36,89 @@ func toJson(dataString: String) -> Information {
   return data ?? Information(status: "No status", driverName: "No Driver Name", expectedDeliveryTime: "00:00");
 }
 
+
 @available(iOS 16.1, *)
 struct RaceStatLiveActivity: Widget {
 
   var body: some WidgetConfiguration {
       ActivityConfiguration(for: RaceStatAttributes.self) { context in
           // Lock screen/banner UI goes here
-          VStack {
-              Text("Welcome \(context.state.emoji)")
+          HStack {
+              Image(systemName: "person.circle.fill")
+                  .font(.largeTitle)
+                  .foregroundColor(.blue)
+                  .padding()
+              
+              VStack(alignment: .leading, spacing: 10) {
+                  ActivityRowView(image: "timer", text: "1 VER", value: "Interval")
+                  ActivityRowView(image: "person.2.fill", text: "2 LEC", value: "+0.004")
+                  ActivityRowView(image: "person.3.fill", text: "3 NOR", value: "+0.565")
+              }
+              .padding()
+              .cornerRadius(10)
+              .shadow(radius: 5)
+              Spacer()
           }
-          .activityBackgroundTint(Color.red)
-          .activitySystemActionForegroundColor(Color.white)
 
       } dynamicIsland: { context in
           DynamicIsland {
               // Expanded UI goes here.  Compose the expanded UI through
               // various regions, like leading/trailing/center/bottom
             DynamicIslandExpandedRegion(.leading) {
-                Text("Leading")
-            }
-            DynamicIslandExpandedRegion(.trailing) {
-                Text("Trailing")
-            }
-            DynamicIslandExpandedRegion(.bottom) {
-                Text("Bottom \(context.state.emoji)")
-                // more content
-            }
+              HStack {
+                  Image(systemName: "person.circle.fill")
+                      .font(.largeTitle)
+                      .foregroundColor(.blue)
+                      .padding()
+                  
+                  VStack(alignment: .leading, spacing: 10) {
+                      ActivityRowView(image: "timer", text: "1 VER", value: "Interval")
+                      ActivityRowView(image: "person.2.fill", text: "2 LEC", value: "+0.004")
+                      ActivityRowView(image: "person.3.fill", text: "3 NOR", value: "+0.565")
+                  }
+                  .padding()
+                  .cornerRadius(10)
+                  .shadow(radius: 5)
+                  Spacer()
+              }
+                       }
+                       DynamicIslandExpandedRegion(.trailing) {
+                           Text("Trailing")
+                       }
+                       DynamicIslandExpandedRegion(.bottom) {
+                           Text("Bottom \(context.state.emoji)")
+                           // more content
+                       }
+             
           } compactLeading: {
-            Text("L")
+              Text("L")
           } compactTrailing: {
-            Text("T \(context.state.emoji)")
+              Text("T \(context.state.emoji)")
           } minimal: {
-            Text(context.state.emoji)
+              Text(context.state.emoji)
           }
           .widgetURL(URL(string: "http://www.apple.com"))
           .keylineTint(Color.red)
       }
   }
+
   
+}
+
+struct ActivityRowView: View {
+    var image: String
+    var text: String
+    var value: String
+    
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: image)
+                .foregroundColor(.blue)
+            Text(text)
+            Spacer()
+            Text(value)
+        }
+    }
 }
 
 extension RaceStatAttributes {

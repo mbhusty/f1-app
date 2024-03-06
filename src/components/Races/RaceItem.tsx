@@ -31,11 +31,11 @@ const RaceItem = ({race}) => {
     } else {
       setIsPastDate(false);
     }
-  }, []);
+  }, [race.date]);
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('DetailRace', {id: race.raceName})}
+      onPress={() => navigation.navigate('DetailRace', {detail: race})}
       style={[
         styles.container,
         {backgroundColor: colors.primary, opacity: isPastDate ? 0.7 : 1},
