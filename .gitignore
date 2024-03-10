@@ -35,3 +35,4 @@ yarn-error.*
 *.tsbuildinfo
 
 vendor/
+ios/GoogleService-Info.plist
