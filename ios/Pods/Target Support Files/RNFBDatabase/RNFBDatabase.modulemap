@@ -1,0 +1,6 @@
+framework module RNFBDatabase {
+  umbrella header "RNFBDatabase-umbrella.h"
+
+  export *
+  module * { export * }
+}

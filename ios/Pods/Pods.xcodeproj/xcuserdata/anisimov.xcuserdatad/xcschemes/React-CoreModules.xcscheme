@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E16E206437995280D349D4B67695C894"
-               BuildableName = "libReact-CoreModules.a"
+               BuildableName = "CoreModules.framework"
                BlueprintName = "React-CoreModules"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

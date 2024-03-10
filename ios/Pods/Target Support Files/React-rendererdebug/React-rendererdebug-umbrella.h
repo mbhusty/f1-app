@@ -16,6 +16,6 @@
 #import "react/renderer/debug/flags.h"
 #import "react/renderer/debug/SystraceSection.h"
 
-FOUNDATION_EXPORT double react_renderer_debugVersionNumber;
-FOUNDATION_EXPORT const unsigned char react_renderer_debugVersionString[];
+FOUNDATION_EXPORT double React_rendererdebugVersionNumber;
+FOUNDATION_EXPORT const unsigned char React_rendererdebugVersionString[];
 

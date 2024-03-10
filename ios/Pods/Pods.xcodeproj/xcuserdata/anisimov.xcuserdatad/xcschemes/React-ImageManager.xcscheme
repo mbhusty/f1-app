@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B5E1D7706FCB7EC5FF39F8CDA49A5653"
-               BuildableName = "libReact-ImageManager.a"
+               BuildableName = "React_ImageManager.framework"
                BlueprintName = "React-ImageManager"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

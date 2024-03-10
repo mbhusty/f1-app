@@ -7,6 +7,7 @@ import {Colors} from '../constants/colors';
 import {StyleSheet, Text, useColorScheme} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useTheme} from '@react-navigation/native';
+import {RaceDemo} from '../screens/main/RaceDemo';
 
 const Tab = createBottomTabNavigator<any>();
 
@@ -65,6 +66,18 @@ export const BottomNavigator: FC = () => {
               );
             },
             title: 'Statistic ',
+          }}
+        />
+        <Tab.Screen
+          name="Demo"
+          component={RaceDemo}
+          options={{
+            tabBarIcon: ({color, size}) => {
+              return (
+                <Icon name="flag-checkered" size={20} color={colors.primary} />
+              );
+            },
+            title: 'Demo ',
           }}
         />
       </Tab.Navigator>

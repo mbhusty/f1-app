@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52C3F83DB80E5D527EDA54FA1DE5470A"
-               BuildableName = "libReact-runtimescheduler.a"
+               BuildableName = "React_runtimescheduler.framework"
                BlueprintName = "React-runtimescheduler"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

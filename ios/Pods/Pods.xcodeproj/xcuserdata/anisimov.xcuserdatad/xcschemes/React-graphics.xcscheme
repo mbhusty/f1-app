@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4BDD270EACFE5730793AEF0B9BCCBA31"
-               BuildableName = "libReact-graphics.a"
+               BuildableName = "React_graphics.framework"
                BlueprintName = "React-graphics"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -1,4 +1,4 @@
-module React_Codegen {
+framework module React_Codegen {
   umbrella header "React-Codegen-umbrella.h"
 
   export *

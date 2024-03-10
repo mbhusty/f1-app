@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A66A1242079D78DB9AE8A5F6D0586F3"
-               BuildableName = "libreact-native-pager-view.a"
+               BuildableName = "react_native_pager_view.framework"
                BlueprintName = "react-native-pager-view"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

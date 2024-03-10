@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C2B1B75CCC326124F29FE703CC59BFB7"
-               BuildableName = "libReact-RCTAppDelegate.a"
+               BuildableName = "React_RCTAppDelegate.framework"
                BlueprintName = "React-RCTAppDelegate"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

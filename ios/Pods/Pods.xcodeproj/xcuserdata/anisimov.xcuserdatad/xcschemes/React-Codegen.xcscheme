@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "66B8F5758E6F90E16807A85C003CE61F"
-               BuildableName = "libReact-Codegen.a"
+               BuildableName = "React_Codegen.framework"
                BlueprintName = "React-Codegen"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

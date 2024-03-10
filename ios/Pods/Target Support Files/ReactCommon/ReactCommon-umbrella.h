@@ -26,13 +26,13 @@
 #import "react/bridging/Object.h"
 #import "react/bridging/Promise.h"
 #import "react/bridging/Value.h"
-#import "ReactCommon/CallbackWrapper.h"
-#import "ReactCommon/LongLivedObject.h"
-#import "ReactCommon/TurboCxxModule.h"
-#import "ReactCommon/TurboModule.h"
-#import "ReactCommon/TurboModuleBinding.h"
-#import "ReactCommon/TurboModulePerfLogger.h"
-#import "ReactCommon/TurboModuleUtils.h"
+#import "react/nativemodule/core/ReactCommon/CallbackWrapper.h"
+#import "react/nativemodule/core/ReactCommon/LongLivedObject.h"
+#import "react/nativemodule/core/ReactCommon/TurboCxxModule.h"
+#import "react/nativemodule/core/ReactCommon/TurboModule.h"
+#import "react/nativemodule/core/ReactCommon/TurboModuleBinding.h"
+#import "react/nativemodule/core/ReactCommon/TurboModulePerfLogger.h"
+#import "react/nativemodule/core/ReactCommon/TurboModuleUtils.h"
 
 FOUNDATION_EXPORT double ReactCommonVersionNumber;
 FOUNDATION_EXPORT const unsigned char ReactCommonVersionString[];

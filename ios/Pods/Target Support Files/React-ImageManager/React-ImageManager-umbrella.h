@@ -15,6 +15,6 @@
 #import "react/renderer/imagemanager/RCTImagePrimitivesConversions.h"
 #import "react/renderer/imagemanager/RCTSyncImageManager.h"
 
-FOUNDATION_EXPORT double react_renderer_imagemanagerVersionNumber;
-FOUNDATION_EXPORT const unsigned char react_renderer_imagemanagerVersionString[];
+FOUNDATION_EXPORT double React_ImageManagerVersionNumber;
+FOUNDATION_EXPORT const unsigned char React_ImageManagerVersionString[];
 

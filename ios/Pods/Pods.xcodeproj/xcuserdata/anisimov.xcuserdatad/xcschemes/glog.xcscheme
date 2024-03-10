@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D0EFEFB685D97280256C559792236873"
-               BuildableName = "libglog.a"
+               BuildableName = "glog.framework"
                BlueprintName = "glog"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

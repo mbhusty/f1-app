@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5BD7FDE565F313FF59D5A876BD38E457"
-               BuildableName = "libPods-F1Hub.a"
+               BuildableName = "Pods_F1Hub.framework"
                BlueprintName = "Pods-F1Hub"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

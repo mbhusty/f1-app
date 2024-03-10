@@ -15,7 +15,7 @@
   "source_files": "dummyFile.cpp",
   "pod_target_xcconfig": {
     "USE_HEADERMAP": "YES",
-    "HEADER_SEARCH_PATHS": "\"$(PODS_TARGET_SRCROOT)\" \"$(PODS_TARGET_SRCROOT)/ReactCommon\"",
+    "HEADER_SEARCH_PATHS": "\"$(PODS_TARGET_SRCROOT)\" \"$(PODS_TARGET_SRCROOT)/ReactCommon\" \"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core\"",
     "CLANG_CXX_LANGUAGE_STANDARD": "c++20"
   },
   "prepare_command": "mkdir -p ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore && touch -a ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/ComponentDescriptors.h ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/EventEmitters.cpp ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/EventEmitters.h ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/Props.cpp ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/Props.h ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/States.cpp ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/States.h ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/RCTComponentViewHelpers.h ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/ShadowNodes.cpp ../../../ios/../node_modules/react-native/ReactCommon/react/renderer/components/rncore/ShadowNodes.h",

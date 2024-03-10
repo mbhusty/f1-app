@@ -1,0 +1,6 @@
+framework module RNBootSplash {
+  umbrella header "RNBootSplash-umbrella.h"
+
+  export *
+  module * { export * }
+}

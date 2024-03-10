@@ -1,4 +1,4 @@
-module react_renderer_graphics {
+framework module React_graphics {
   umbrella header "React-graphics-umbrella.h"
 
   export *

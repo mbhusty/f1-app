@@ -14,6 +14,6 @@
 #import "react/debug/react_native_assert.h"
 #import "react/debug/react_native_expect.h"
 
-FOUNDATION_EXPORT double react_debugVersionNumber;
-FOUNDATION_EXPORT const unsigned char react_debugVersionString[];
+FOUNDATION_EXPORT double React_debugVersionNumber;
+FOUNDATION_EXPORT const unsigned char React_debugVersionString[];
 

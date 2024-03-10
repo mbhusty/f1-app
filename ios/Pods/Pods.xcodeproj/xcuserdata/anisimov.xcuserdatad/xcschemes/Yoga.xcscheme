@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B25F90D819B9ADF2AF2D8733A890333"
-               BuildableName = "libYoga.a"
+               BuildableName = "yoga.framework"
                BlueprintName = "Yoga"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

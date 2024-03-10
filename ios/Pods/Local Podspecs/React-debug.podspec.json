@@ -17,5 +17,7 @@
   "pod_target_xcconfig": {
     "CLANG_CXX_LANGUAGE_STANDARD": "c++20",
     "DEFINES_MODULE": "YES"
-  }
+  },
+  "module_name": "React_debug",
+  "header_mappings_dir": "../.."
 }

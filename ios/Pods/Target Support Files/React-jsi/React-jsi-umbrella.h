@@ -10,13 +10,13 @@
 #endif
 #endif
 
-#import "jsi/decorator.h"
-#import "jsi/instrumentation.h"
-#import "jsi/jsi-inl.h"
-#import "jsi/jsi.h"
-#import "jsi/JSIDynamic.h"
-#import "jsi/jsilib.h"
-#import "jsi/threadsafe.h"
+#import "decorator.h"
+#import "instrumentation.h"
+#import "jsi-inl.h"
+#import "jsi.h"
+#import "JSIDynamic.h"
+#import "jsilib.h"
+#import "threadsafe.h"
 
 FOUNDATION_EXPORT double jsiVersionNumber;
 FOUNDATION_EXPORT const unsigned char jsiVersionString[];

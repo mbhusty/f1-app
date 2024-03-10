@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F1E2583679398CB5F4D2B3272E9B198F"
-               BuildableName = "libReact-perflogger.a"
+               BuildableName = "reactperflogger.framework"
                BlueprintName = "React-perflogger"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

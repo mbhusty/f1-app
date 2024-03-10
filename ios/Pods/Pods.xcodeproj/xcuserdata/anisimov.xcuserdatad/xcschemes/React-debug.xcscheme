@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0C050E11C4409D3BFAE9CC219C4D6195"
-               BuildableName = "libReact-debug.a"
+               BuildableName = "React_debug.framework"
                BlueprintName = "React-debug"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

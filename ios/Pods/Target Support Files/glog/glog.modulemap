@@ -1,4 +1,4 @@
-module glog {
+framework module glog {
   umbrella header "glog-umbrella.h"
 
   export *

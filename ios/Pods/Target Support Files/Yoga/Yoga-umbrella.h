@@ -10,10 +10,10 @@
 #endif
 #endif
 
-#import "yoga/YGEnums.h"
-#import "yoga/YGMacros.h"
-#import "yoga/YGValue.h"
-#import "yoga/Yoga.h"
+#import "YGEnums.h"
+#import "YGMacros.h"
+#import "YGValue.h"
+#import "Yoga.h"
 
 FOUNDATION_EXPORT double yogaVersionNumber;
 FOUNDATION_EXPORT const unsigned char yogaVersionString[];

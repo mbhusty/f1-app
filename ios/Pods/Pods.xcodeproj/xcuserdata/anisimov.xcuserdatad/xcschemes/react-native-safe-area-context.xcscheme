@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BD9A27D8398DEB3205D3F8937B0672A0"
-               BuildableName = "libreact-native-safe-area-context.a"
+               BuildableName = "react_native_safe_area_context.framework"
                BlueprintName = "react-native-safe-area-context"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

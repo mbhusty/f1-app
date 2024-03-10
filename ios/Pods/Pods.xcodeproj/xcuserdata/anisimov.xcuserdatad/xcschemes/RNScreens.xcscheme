@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "214E42634D1E187D876346D36184B655"
-               BuildableName = "libRNScreens.a"
+               BuildableName = "RNScreens.framework"
                BlueprintName = "RNScreens"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

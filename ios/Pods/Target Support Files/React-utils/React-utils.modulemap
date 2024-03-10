@@ -1,4 +1,4 @@
-module react_utils {
+framework module React_utils {
   umbrella header "React-utils-umbrella.h"
 
   export *

@@ -19,6 +19,8 @@
     "DEFINES_MODULE": "YES",
     "HEADER_SEARCH_PATHS": "\"${PODS_CONFIGURATION_BUILD_DIR}/React-rendererdebug/React_rendererdebug.framework/Headers\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios\""
   },
+  "header_mappings_dir": "./",
+  "module_name": "React_Fabric",
   "dependencies": {
     "RCT-Folly/Fabric": [
       "2022.05.16.00"
@@ -112,7 +114,7 @@
       "exclude_files": "react/renderer/core/tests",
       "header_dir": "react/renderer/core",
       "pod_target_xcconfig": {
-        "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/boost\" \"$(PODS_TARGET_SRCROOT)/ReactCommon\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/Headers/Private/Yoga\" \"$(PODS_TARGET_SRCROOT)\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/fmt/include\""
+        "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/boost\" \"$(PODS_TARGET_SRCROOT)/ReactCommon\" \"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/Headers/Private/Yoga\" \"$(PODS_TARGET_SRCROOT)\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/fmt/include\" \"$(PODS_TARGET_SRCROOT)/react/renderer/textlayoutmanager/platform/ios\" \"$(PODS_TARGET_SRCROOT)/react/renderer/components/textinput/iostextinput\" \"$(PODS_TARGET_SRCROOT)/react/renderer/components/view/platform/cxx\""
       }
     },
     {

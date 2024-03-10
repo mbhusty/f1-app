@@ -1,4 +1,4 @@
-module RCTTypeSafety {
+framework module RCTTypeSafety {
   umbrella header "RCTTypeSafety-umbrella.h"
 
   export *

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "938CCE22F6C4094B3FB6CF1478579E4B"
-               BuildableName = "libReact-RCTAnimation.a"
+               BuildableName = "RCTAnimation.framework"
                BlueprintName = "React-RCTAnimation"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

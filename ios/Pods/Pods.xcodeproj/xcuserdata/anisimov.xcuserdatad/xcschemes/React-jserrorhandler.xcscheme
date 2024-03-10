@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27F648AD269E94404D6A7547C4F9C683"
-               BuildableName = "libReact-jserrorhandler.a"
+               BuildableName = "React_jserrorhandler.framework"
                BlueprintName = "React-jserrorhandler"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

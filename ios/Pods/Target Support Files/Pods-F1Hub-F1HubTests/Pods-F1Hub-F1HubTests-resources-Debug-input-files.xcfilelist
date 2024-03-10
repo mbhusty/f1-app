@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-F1Hub-F1HubTests/Pods-F1Hub-F1HubTests-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises_Privacy.bundle
 ${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf
 ${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf
 ${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf
@@ -19,3 +20,4 @@ ${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf
 ${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf
 ${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf
 ${PODS_CONFIGURATION_BUILD_DIR}/React-Core/RCTI18nStrings.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb_Privacy.bundle

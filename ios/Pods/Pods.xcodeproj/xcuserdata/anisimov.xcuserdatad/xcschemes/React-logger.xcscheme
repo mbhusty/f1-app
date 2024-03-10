@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "083B602EA19B4AD50EC53C0602F29A7D"
-               BuildableName = "libReact-logger.a"
+               BuildableName = "logger.framework"
                BlueprintName = "React-logger"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

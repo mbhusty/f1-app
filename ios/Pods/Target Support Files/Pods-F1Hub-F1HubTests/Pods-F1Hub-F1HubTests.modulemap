@@ -1,4 +1,4 @@
-module Pods_F1Hub_F1HubTests {
+framework module Pods_F1Hub_F1HubTests {
   umbrella header "Pods-F1Hub-F1HubTests-umbrella.h"
 
   export *

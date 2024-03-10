@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02B79DFED924FA19CA90EC69614733E1"
-               BuildableName = "libfmt.a"
+               BuildableName = "fmt.framework"
                BlueprintName = "fmt"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -1,4 +1,4 @@
-module React_NativeModulesApple {
+framework module React_NativeModulesApple {
   umbrella header "React-NativeModulesApple-umbrella.h"
 
   export *

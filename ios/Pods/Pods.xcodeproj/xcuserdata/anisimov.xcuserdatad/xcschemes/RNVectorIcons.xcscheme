@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "96150F524B245896B800F84F369A9A5A"
-               BuildableName = "libRNVectorIcons.a"
+               BuildableName = "RNVectorIcons.framework"
                BlueprintName = "RNVectorIcons"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

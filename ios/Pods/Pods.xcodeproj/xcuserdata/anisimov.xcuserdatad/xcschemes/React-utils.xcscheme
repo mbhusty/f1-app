@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "30621D5A9764AC0BD9D02E87B2EA6665"
-               BuildableName = "libReact-utils.a"
+               BuildableName = "React_utils.framework"
                BlueprintName = "React-utils"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

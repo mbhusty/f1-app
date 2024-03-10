@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "091003D98BDA80B01B9E35CADE3947F0"
-               BuildableName = "libReact-Mapbuffer.a"
+               BuildableName = "React_Mapbuffer.framework"
                BlueprintName = "React-Mapbuffer"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

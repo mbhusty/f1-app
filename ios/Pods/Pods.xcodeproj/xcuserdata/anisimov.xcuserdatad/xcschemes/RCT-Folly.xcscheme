@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC55D52694092A9D0E6A78EB01207EB5"
-               BuildableName = "libRCT-Folly.a"
+               BuildableName = "folly.framework"
                BlueprintName = "RCT-Folly"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

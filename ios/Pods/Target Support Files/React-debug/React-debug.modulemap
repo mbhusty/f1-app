@@ -1,4 +1,4 @@
-module react_debug {
+framework module React_debug {
   umbrella header "React-debug-umbrella.h"
 
   export *

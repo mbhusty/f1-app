@@ -10,11 +10,11 @@
 #endif
 #endif
 
-#import "glog/logging.h"
-#import "glog/log_severity.h"
-#import "glog/raw_logging.h"
-#import "glog/stl_logging.h"
-#import "glog/vlog_is_on.h"
+#import "logging.h"
+#import "log_severity.h"
+#import "raw_logging.h"
+#import "stl_logging.h"
+#import "vlog_is_on.h"
 
 FOUNDATION_EXPORT double glogVersionNumber;
 FOUNDATION_EXPORT const unsigned char glogVersionString[];

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D20469A9A1E5CFB26045EAEBE3F88E5E"
-               BuildableName = "libRCTTypeSafety.a"
+               BuildableName = "RCTTypeSafety.framework"
                BlueprintName = "RCTTypeSafety"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

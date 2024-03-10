@@ -18,8 +18,10 @@
   "exclude_files": "tests",
   "pod_target_xcconfig": {
     "CLANG_CXX_LANGUAGE_STANDARD": "c++20",
-    "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/boost\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-debug/React_debug.framework/Headers\""
+    "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_ROOT)/boost\" \"$(PODS_TARGET_SRCROOT)/../../..\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-debug/React_debug.framework/Headers\""
   },
+  "module_name": "React_runtimescheduler",
+  "header_mappings_dir": "../../..",
   "dependencies": {
     "React-runtimeexecutor": [
 

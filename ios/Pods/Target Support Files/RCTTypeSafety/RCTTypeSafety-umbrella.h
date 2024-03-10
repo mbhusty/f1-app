@@ -10,8 +10,8 @@
 #endif
 #endif
 
-#import "RCTTypeSafety/RCTConvertHelpers.h"
-#import "RCTTypeSafety/RCTTypedModuleConstants.h"
+#import "RCTConvertHelpers.h"
+#import "RCTTypedModuleConstants.h"
 
 FOUNDATION_EXPORT double RCTTypeSafetyVersionNumber;
 FOUNDATION_EXPORT const unsigned char RCTTypeSafetyVersionString[];

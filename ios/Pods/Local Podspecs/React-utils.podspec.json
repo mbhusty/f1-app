@@ -21,6 +21,8 @@
     "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/RCT-Folly\" \"$(PODS_TARGET_SRCROOT)\" \"$(PODS_TARGET_SRCROOT)/ReactCommon\" \"${PODS_CONFIGURATION_BUILD_DIR}/React-debug/React_debug.framework/Headers\"",
     "DEFINES_MODULE": "YES"
   },
+  "module_name": "React_utils",
+  "header_mappings_dir": "../..",
   "dependencies": {
     "RCT-Folly": [
       "2022.05.16.00"
