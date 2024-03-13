@@ -4,7 +4,6 @@ import {FC} from 'react';
 import {
   View,
   StyleSheet,
-  Text,
   useWindowDimensions,
   TouchableOpacity,
   Animated,
@@ -14,7 +13,6 @@ import {TabView, SceneMap} from 'react-native-tab-view';
 
 import DriversList from '../../components/Standings/DriversList';
 import ConstructorsList from '../../components/Standings/ConstructorsList';
-import {Colors} from '../../constants/colors';
 
 const FirstRoute = () => (
   <View>
@@ -61,6 +59,7 @@ export const Standings: FC = () => {
 
           return (
             <TouchableOpacity
+              key={i}
               onPress={() => setIndex(i)}
               style={[{opacity}, styles.tabBlock]}>
               <Animated.Text

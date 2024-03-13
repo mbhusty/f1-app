@@ -9,12 +9,14 @@ import {
 import {Colors} from '../../constants/colors';
 import Divider from '../Divider/Divider';
 import {useTheme} from '@react-navigation/native';
+import {TeamsColor} from '../../constants/teamsColor';
 
 const ConstructorsItem = ({constructor}) => {
   const theme = useColorScheme();
   const {colors} = useTheme();
   return (
     <TouchableOpacity
+      key={constructor.position}
       style={[styles.container, {backgroundColor: colors.primary}]}>
       <View style={styles.card}>
         <View style={styles.dateBlock}>
@@ -24,8 +26,8 @@ const ConstructorsItem = ({constructor}) => {
         </View>
         <Divider
           orientation={'vertical'}
-          width={2}
-          color={theme === 'dark' ? '#000' : '#fff'}
+          width={3}
+          color={TeamsColor[constructor.Constructor.constructorId]}
         />
         <View style={styles.infoBlock}>
           <Text style={[styles.round, {color: colors.text}]}>
@@ -66,6 +68,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     marginLeft: 5,
+    width: 70,
   },
   infoBlock: {
     justifyContent: 'space-around',

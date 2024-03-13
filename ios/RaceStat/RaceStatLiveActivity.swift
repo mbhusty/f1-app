@@ -12,11 +12,8 @@ import SwiftUI
 struct RaceStatAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
-        var emoji: String
+        var lap: String
     }
-
-    // Fixed non-changing properties about your activity go here!
-    var name: String
 }
 
 struct Information: Codable {
@@ -43,16 +40,21 @@ struct RaceStatLiveActivity: Widget {
   var body: some WidgetConfiguration {
       ActivityConfiguration(for: RaceStatAttributes.self) { context in
           // Lock screen/banner UI goes here
+        HStack {
+          Text("LAP \(context.state.lap)/50")
+            .font(.subheadline)
+              .monospacedDigit()
+              .transition(.identity)
+        }
           HStack {
-              Image(systemName: "person.circle.fill")
+              Image(systemName: "flag.slash.circle")
                   .font(.largeTitle)
                   .foregroundColor(.blue)
                   .padding()
-              
               VStack(alignment: .leading, spacing: 10) {
-                  ActivityRowView(image: "timer", text: "1 VER", value: "Interval")
-                  ActivityRowView(image: "person.2.fill", text: "2 LEC", value: "+0.004")
-                  ActivityRowView(image: "person.3.fill", text: "3 NOR", value: "+0.565")
+                ActivityRowView(position: "1", image: "person.1.fill", text: "LEC", time: "Interval")
+                ActivityRowView(position: "2", image: "person.1.fill", text: "NOR", time: "+0.004")
+                ActivityRowView(position: "3", image: "person.1.fill", text: "VER", time: "+0.565")
               }
               .padding()
               .cornerRadius(10)
@@ -66,36 +68,39 @@ struct RaceStatLiveActivity: Widget {
               // various regions, like leading/trailing/center/bottom
             DynamicIslandExpandedRegion(.leading) {
               HStack {
-                  Image(systemName: "person.circle.fill")
-                      .font(.largeTitle)
-                      .foregroundColor(.blue)
-                      .padding()
-                  
-                  VStack(alignment: .leading, spacing: 10) {
-                      ActivityRowView(image: "timer", text: "1 VER", value: "Interval")
-                      ActivityRowView(image: "person.2.fill", text: "2 LEC", value: "+0.004")
-                      ActivityRowView(image: "person.3.fill", text: "3 NOR", value: "+0.565")
-                  }
-                  .padding()
-                  .cornerRadius(10)
-                  .shadow(radius: 5)
-                  Spacer()
+                Text("LAP \(context.state.lap)/50")
+                  .font(.subheadline)
+                    .monospacedDigit()
+                    .transition(.identity)
               }
+                HStack {
+                    Image(systemName: "flag.slash.circle")
+                        .font(.largeTitle)
+                        .foregroundColor(.blue)
+                        .padding()
+                    VStack(alignment: .leading, spacing: 10) {
+                      ActivityRowView(position: "1", image: "person.1.fill", text: "LEC", time: "Interval")
+                      ActivityRowView(position: "2", image: "person.1.fill", text: "NOR", time: "+0.004")
+                      ActivityRowView(position: "3", image: "person.1.fill", text: "VER", time: "+0.565")
+                    }
+                    .padding()
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                    Spacer()
+                }
                        }
-                       DynamicIslandExpandedRegion(.trailing) {
-                           Text("Trailing")
-                       }
-                       DynamicIslandExpandedRegion(.bottom) {
-                           Text("Bottom \(context.state.emoji)")
-                           // more content
-                       }
+                       
              
           } compactLeading: {
-              Text("L")
+            Image(systemName: "timer")
+                     .imageScale(.medium)
+                     .foregroundColor(.cyan)
           } compactTrailing: {
-              Text("T \(context.state.emoji)")
+              Text("LAP \(context.state.lap)/50")
           } minimal: {
-              Text(context.state.emoji)
+            Image(systemName: "timer")
+                     .imageScale(.medium)
+                     .foregroundColor(.cyan)
           }
           .widgetURL(URL(string: "http://www.apple.com"))
           .keylineTint(Color.red)
@@ -106,33 +111,30 @@ struct RaceStatLiveActivity: Widget {
 }
 
 struct ActivityRowView: View {
+    var position: String
     var image: String
     var text: String
-    var value: String
+    var time: String
     
     var body: some View {
         HStack(spacing: 10) {
+          Text(position)
+          Spacer()
             Image(systemName: image)
                 .foregroundColor(.blue)
             Text(text)
             Spacer()
-            Text(value)
+            Text(time)
         }
-    }
-}
-
-extension RaceStatAttributes {
-    fileprivate static var preview: RaceStatAttributes {
-      RaceStatAttributes(name: "World")
     }
 }
 
 extension RaceStatAttributes.ContentState {
     fileprivate static var smiley: RaceStatAttributes.ContentState {
-      RaceStatAttributes.ContentState(emoji: "😀")
+      RaceStatAttributes.ContentState(lap: "0")
      }
      
      fileprivate static var starEyes: RaceStatAttributes.ContentState {
-       RaceStatAttributes.ContentState(emoji: "🤩")
+       RaceStatAttributes.ContentState(lap: "0")
      }
 }

@@ -5,12 +5,8 @@ import {apiRequest} from '../../utils/apiRequest';
 import NoData from '../Empty/NoData';
 import Loader from '../Loader/Loader';
 
-interface Driver {
-  positionText: string;
-}
-
 const DriversList: React.FC = () => {
-  const [drivers, setDrivers] = useState<Driver[]>([]);
+  const [drivers, setDrivers] = useState<[]>([]);
   const [loading, setLoading] = useState(false);
 
   const fetchDataStandings = async () => {
@@ -45,7 +41,7 @@ const DriversList: React.FC = () => {
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           renderItem={({item}) => <DriversItem driver={item} />}
-          keyExtractor={item => item.positionText}
+          keyExtractor={(item, index) => index.toString()}
           ListEmptyComponent={NoData}
           style={styles.list}
         />

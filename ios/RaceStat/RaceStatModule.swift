@@ -11,21 +11,29 @@ import ActivityKit
 @objc(RaceStat)
 class RaceStat: NSObject {
   // RaceStatAttributes
-  @objc
-    static func requiresMainQueueSetup() -> Bool {
+  private func areActivitiesEnabled() -> Bool {
+    if #available(iOS 16.1, *) {
+      return ActivityAuthorizationInfo().areActivitiesEnabled
+    } else {
       return false
     }
-
-  @objc(startActivity)
-  func startActvity(){
+  }
+  
+  @objc(startActivity:)
+  func startActivity(_ name: String) {
+    if (!areActivitiesEnabled()) {
+          // User disabled Live Activities for the app, nothing to do
+          return
+    }
+    let raceStatAttributes = RaceStatAttributes()
+    let raceStatContentState = RaceStatAttributes.ContentState(lap: name)
+    
     do{
-      if #available(iOS 16.1, *){
-        let raceStatAttributes = RaceStatAttributes(name: "Food Delivery")
-        let raceStatContentState = RaceStatAttributes.ContentState(emoji: "https://t.me/react_pain")
-        let activity = try Activity<RaceStatAttributes>.request(attributes: raceStatAttributes, contentState: raceStatContentState,  pushType: nil)
-        
-      }else{
-        print("Dynamic Island and live activies not supported")
+     
+      if #available(iOS 16.1, *) {
+        _ = try Activity<RaceStatAttributes>.request(attributes: raceStatAttributes, contentState: raceStatContentState,  pushType: nil)
+      } else {
+        // Fallback on earlier versions
       }
       
     }catch (_){
@@ -35,18 +43,14 @@ class RaceStat: NSObject {
   
   @objc(updateActivity:)
   func updateActivity(name: String){
-    do{
       if #available(iOS 16.1, *){
-        let raceStatContentState = RaceStatAttributes.ContentState(emoji: name)
+        let raceStatContentState = RaceStatAttributes.ContentState(lap: name)
         Task{
           for activity in Activity<RaceStatAttributes>.activities {
             await activity.update(using: raceStatContentState)
           }
         }
       }
-    }catch(_){
-      print("some error")
-    }
   }
 
  @objc(endActivity)

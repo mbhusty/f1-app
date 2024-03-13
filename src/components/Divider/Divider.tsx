@@ -18,7 +18,7 @@ const Divider: React.FC<DividerProps> = ({
     {width: orientation === 'horizontal' ? '100%' : width},
     {height: orientation === 'vertical' ? '100%' : width},
     {backgroundColor: color},
-    {opacity: 0.15},
+    {opacity: 0.9},
     dividerStyle,
   ];
 

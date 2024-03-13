@@ -4,12 +4,8 @@ import ConstructorsItem from './ConstructorsItem';
 import {apiRequest} from '../../utils/apiRequest';
 import NoData from '../Empty/NoData';
 
-interface Constructor {
-  positionText: string;
-}
-
 const ConstructorsItemList: React.FC = () => {
-  const [constructors, setConstructors] = useState<Constructor[]>([]);
+  const [constructors, setConstructors] = useState<[]>([]);
 
   const fetchDataStandings = async () => {
     try {
@@ -37,7 +33,7 @@ const ConstructorsItemList: React.FC = () => {
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
       renderItem={({item}) => <ConstructorsItem constructor={item} />}
-      keyExtractor={item => item.positionText}
+      keyExtractor={(item, index) => index.toString()}
       ListEmptyComponent={NoData}
       style={styles.list}
     />

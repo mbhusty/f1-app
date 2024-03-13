@@ -2,12 +2,16 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "assets/fonts/Extreme/PathwayExtreme.ttf",
-      "sha1": "e2684e709d4db123ac7c424a0388c59acf0c9c8c"
+      "path": "assets/fonts/F1-Regular.ttf",
+      "sha1": "69b0b201f4bbbcc0c420496810e98915f795c397"
     },
     {
-      "path": "assets/fonts/Formula1/F1-Regular.ttf",
-      "sha1": "69b0b201f4bbbcc0c420496810e98915f795c397"
+      "path": "assets/fonts/Oxanium-Light.ttf",
+      "sha1": "586a7ef91a92066d6c7880983a248d98416a4bd2"
+    },
+    {
+      "path": "assets/fonts/PathwayExtreme.ttf",
+      "sha1": "e2684e709d4db123ac7c424a0388c59acf0c9c8c"
     }
   ]
 }

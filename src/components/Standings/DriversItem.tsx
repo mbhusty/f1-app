@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {Colors} from '../../constants/colors';
 import {Drivers} from '../../constants/drivers';
+import {TeamsColor} from '../../constants/teamsColor';
 import Divider from '../Divider/Divider';
 import {useTheme} from '@react-navigation/native';
 
@@ -18,6 +19,7 @@ const RaceItem = ({driver}) => {
 
   return (
     <TouchableOpacity
+      key={driver.number}
       style={[styles.container, {backgroundColor: colors.primary}]}>
       <View style={styles.card}>
         <View style={styles.dateBlock}>
@@ -27,8 +29,8 @@ const RaceItem = ({driver}) => {
         </View>
         <Divider
           orientation={'vertical'}
-          width={2}
-          color={theme === 'dark' ? '#000' : '#fff'}
+          width={3}
+          color={TeamsColor[driver.Constructors[0].constructorId]}
         />
         <View style={styles.infoBlock}>
           <Text style={[styles.round, {color: colors.text}]}>
@@ -43,10 +45,7 @@ const RaceItem = ({driver}) => {
           </Text>
         </View>
         <View style={styles.pointsBlock}>
-          <Image
-            style={styles.driverImg}
-            source={Drivers[driver.Driver.code]}
-          />
+          <Image style={styles.driverImg} src={Drivers[driver.Driver.code]} />
           <View style={[styles.overflow, {borderColor: colors.background}]}>
             <Text style={[styles.points, {color: colors.text}]}>
               {driver.points}
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   position: {
-    fontSize: 35,
+    fontSize: 32,
     fontWeight: '400',
     fontFamily: 'Formula1',
   },

@@ -11,7 +11,7 @@ import SwiftUI
 @main
 struct RaceStatBundle: WidgetBundle {
     var body: some Widget {
-        RaceStat()
+        //RaceStat()
         RaceStatLiveActivity()
     }
 }

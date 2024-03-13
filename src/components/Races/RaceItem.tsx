@@ -15,6 +15,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 
 const RaceItem = ({race}) => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  navigation.removeListener; //FIX Sending `onAnimatedValueUpdate` with no listeners registered.
   const theme = useColorScheme();
   const {colors} = useTheme();
   moment.locale('en');

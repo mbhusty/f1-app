@@ -5,6 +5,10 @@ import React from 'react';
 import {apiRequest} from '../../utils/apiRequest';
 import Loader from '../../components/Loader/Loader';
 
+interface Race {
+  date: string;
+}
+
 export const Races: FC = () => {
   const [races, setRaces] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
@@ -13,8 +17,15 @@ export const Races: FC = () => {
     setLoading(true);
     try {
       const response = await apiRequest.get('2024.json');
-      const fetchedRaces = response.data.MRData.RaceTable.Races;
-      setRaces(fetchedRaces);
+      const fetchedRaces: Race[] = response.data.MRData.RaceTable.Races;
+      const currentDate = new Date().toISOString().split('T')[0];
+      const prevRaces = fetchedRaces.filter(race => race.date < currentDate);
+      const nextRaces = fetchedRaces.filter(race => race.date >= currentDate);
+      const formattedRaces = [
+        {title: 'Previous', data: prevRaces},
+        {title: 'Next', data: nextRaces},
+      ];
+      setRaces(formattedRaces);
     } catch (error) {
       Alert.alert('Error', 'Error fetching races');
     } finally {
